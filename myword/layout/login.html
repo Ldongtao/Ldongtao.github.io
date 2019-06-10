@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1173011_vuziol4sj7.css">
+</head>
+
+<body>
+    <div class="header">
+
+    </div>
+
+    <div class="content">
+        <div class="content-main">
+            <div class="login-box">
+                <div class="login">
+                    <div class="login-logo">
+                        <img src="../images/logo.png" alt="">
+                    </div>
+                    <ul>
+                        <li>
+                            <p>用户名</p>
+                            <input type="text" id="username">
+                        </li>
+                        <li>
+                            <p>密码</p>
+                            <input type="password" id="userpwd">
+                        </li>
+                    </ul>
+                    <input type="checkbox" class="checkOne"><span>显示密码</span><br>
+                    <input type="checkbox" class="checkOne" checked><span>记住密码</span>
+                    <button id="btn">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+<script>
+    // 头部
+    $(".header").load("./header.html", function() {
+        $.getScript("../js/header.js");
+    });
+    // 尾部
+    $(".footer").load("./footer.html");
+
+    $("#btn").click(function() {
+        var username = $("#username").val();
+        var userpwd = $("#userpwd").val();
+        $.ajax({
+            type: "get",
+            url: "../php/login.php",
+            data: {
+                // userid,
+                username,
+                userpwd
+            },
+            dataType: "json",
+            success: function(obj) {
+                if (obj["code"] == 1) {
+                    setCookie("loginName", username, 7);
+                    setCookie("loginId", obj["userid"], 7);
+                    // alert(obj["msg"]);
+                    // window.location.href = "../index.html";
+                    if (getCookie("backUrl")) { //跳转设置
+                        window.location.href = getCookie("backUrl");
+                    } else {
+                        window.location.href = "./goodslist.html";
+                    }
+                } else {
+                    alert(obj["msg"]);
+                }
+
+            }
+        })
+    })
+</script>
+
+</html>

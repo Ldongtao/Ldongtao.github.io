@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/goodslist.css">
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1173011_vuziol4sj7.css">
+</head>
+
+<body>
+    <div class="header">
+    </div>
+
+    <form action method="get">
+        <div class="wrap w">
+            <div class="crumb">
+                <ul>
+                    <li>
+                        <a href="../index.html">首页</a>
+                        <i class="crumb_arrow"></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">所有分类</a>
+                        <i class="crumb_arrow"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="select w">
+                <div class="select-info">
+                    <h3><em>商品筛选</em></h3>
+                </div>
+                <dl class="select-line">
+                    <dt>品牌</dt>
+                    <dd class="values"><a href="">安踏</a></dd>
+                </dl>
+                <dl class="select-line">
+                    <dt>大类</dt>
+                    <dd class="values"><a href="">鞋类</a></dd>
+                </dl>
+                <dl class="select-line">
+                    <dt>性别</dt>
+                    <dd class="values">
+                        <ul>
+                            <li><a href="javascript:;">男</a></li>
+                            <li><a href="javascript:;">女</a></li>
+                            <li><a href="javascript:;">中性</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="select-line">
+                    <dt>季节</dt>
+                    <dd class="values">
+                        <ul>
+                            <li><a href="javascript:;">冬季</a></li>
+                            <li><a href="javascript:;">秋季</a></li>
+                            <li><a href="javascript:;">夏季</a></li>
+                            <li><a href="javascript:;">春季</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="select-line">
+                    <dt>类别</dt>
+                    <dd class="values">
+                        <ul>
+                            <li><a href="javascript:;">跑鞋</a></li>
+                            <li><a href="javascript:;">篮球鞋</a></li>
+                            <li><a href="javascript:;">休闲鞋</a></li>
+                            <li><a href="javascript:;">板鞋</a></li>
+                            <li><a href="javascript:;">足球鞋</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="more w">
+            <div class="more-over">
+                <a class="more-btn">
+                    更多选项
+                    <i></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="main w">
+            <div class="main-top">
+                <div class="top-sort fl">
+                    <a class="current" href="javascript:;">综合排序</a>
+                    <a class href="javascript:;">
+                        <input type="radio" name="rank" value="asc">价格↑</a>
+                    <a class href="javascript:;">
+                        <input type="radio" name="rank" value="desc">价格↓
+                    </a>
+                </div>
+                <div class="top-search fr">
+                    <input type="text" class="fl" id="key" placeholder="在结果中搜索">
+                    <a href="javascript:;" id="keyBtn">确认</a>
+                </div>
+            </div>
+            <div class="main-list-box">
+                <ul id="tbody" class="main-list">
+                    <!-- <li>
+                        <div class="list_info">
+                            <a class="list-img">
+                                <img src="../images/s1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="list-price">
+                            <span>￥<b>449.00</b></span>
+                        </div>
+                        <p>安踏男子2019氢跑鞋FLASHLITE科技网面轻便跑鞋11925541</p>
+                        <div class="list-bottom">
+                            <a href="">立即购买</a>
+                            <a href="">加入购物车</a>
+                        </div>
+                    </li> -->
+
+                </ul>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="page">
+    </div>
+
+
+    <div class="footer">
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+<script src="../js/page.js"></script>
+<script>
+    // 头部
+    $(".header").load("./header.html", function() {
+        $.getScript("../js/header.js");
+    });
+    // 尾部
+    $(".footer").load("./footer.html");
+
+
+
+
+    var key = "";
+    var rank = "";
+    var shownum = 10;
+    var pageIndex = 0;
+
+
+    getData(key, shownum * pageIndex, shownum, rank);
+
+    $("#keyBtn").on("click", function() {
+        key = $("#key").val();
+        // alert(key);
+        getData(key, shownum * pageIndex, shownum, rank);
+    })
+
+    var rankList = document.getElementsByName("rank");
+    for (var i = 0; i < rankList.length; i++) {
+        rankList[i].onclick = function() {
+            rank = this.value;
+            // alert(rank);
+            getData(key, shownum * pageIndex, shownum, rank);
+        }
+    }
+
+    function getData(key, skipnum, shownum, rank) {
+        $(".page").html("");
+        $.ajax({
+            type: "get",
+            url: `../php/getallgoodslistcount.php?key=${key}&rank=${rank}&skipnum=${skipnum}&shownum=${shownum}`,
+            dataType: "json",
+            success: function(obj) {
+                var count = obj["count"];
+
+                new Page(".page", {
+                    count: count,
+                    shownum: 10,
+                    showpage: 5,
+                    callback: function(pageIndex) {
+                        $.ajax({
+                            type: "get",
+                            url: "../php/goodslist.php",
+                            data: {
+                                key: key,
+                                rank: rank,
+                                skipnum: (pageIndex - 1) * 10,
+                                shownum: 10
+                            },
+                            dataType: "json",
+                            success: function(list) {
+                                var html = "";
+                                list.forEach(function(goodsinfo) {
+                                    var {
+                                        id,
+                                        goodsname,
+                                        goodsimg,
+                                        goodsprice
+                                    } = goodsinfo;
+
+                                    html += `
+                                <li onclick="detail('${id}',this)">
+                                    <div class="list_info">
+                                        <a class="list-img">
+                                            <img src="${goodsimg}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="list-price">
+                                        <span>￥<b>${(goodsprice*1).toFixed(2)}</b></span>
+                                    </div>
+                                    <p>${goodsname}</p>
+                                    <div class="list-bottom">
+                                        <a href="javascript:;">立即购买</a>
+                                        <a href="javascript:;">加入购物车</a>
+                                    </div>
+                                </li>`;
+                                });
+                                tbody.innerHTML = html;
+                            }
+                        })
+                    }
+                })
+
+            }
+        })
+    }
+
+    // $.ajax({
+    //     type: "get",
+    //     url: "../php/goodslist.php",
+    //     dataType: "json",
+    //     success: function(list) {
+    //         var html = "";
+    //         list.forEach(function(goodsinfo) {
+    //             var {
+    //                 id,
+    //                 goodsname,
+    //                 goodsimg,
+    //                 goodsprice
+    //             } = goodsinfo;
+
+    //             html += `<li onclick="detail('${id}',this)">
+    //                     <div class="list_info">
+    //                         <a class="list-img">
+    //                             <img src="${goodsimg}" alt="">
+    //                         </a>
+    //                     </div>
+    //                     <div class="list-price">
+    //                         <span>￥<b>${(goodsprice*1).toFixed(2)}</b></span>
+    //                     </div>
+    //                     <p>${goodsname}</p>
+    //                     <div class="list-bottom">
+    //                         <a href="">立即购买</a>
+    //                         <a href="">加入购物车</a>
+    //                     </div>
+    //                 </li>`;
+    //         });
+    //         tbody.innerHTML = html;
+    //     },
+    //     error: function() {
+    //         alert("网络异常,请稍后再试...");
+    //     }
+    // })
+
+    function detail(id, ele) {
+        // alert(id);
+        window.location.href = "detail.html?id=" + id;
+    }
+</script>
+
+</html>

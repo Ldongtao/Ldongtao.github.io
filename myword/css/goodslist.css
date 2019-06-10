@@ -1,0 +1,240 @@
+.wrap {
+  height: auto;
+  margin: 0 auto;
+}
+.wrap .crumb {
+  width: 100%;
+  overflow: hidden;
+  margin: 25px 0 15px;
+}
+.wrap .crumb ul li {
+  float: left;
+  line-height: 21px;
+}
+.wrap .crumb ul li a {
+  color: #666;
+}
+.wrap .crumb ul li .crumb_arrow {
+  display: inline-block;
+  margin-left: 3px;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  background: url(../images/list.png) no-repeat;
+  background-position: 0 -104px;
+}
+.wrap .select .select-info {
+  line-height: 35px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  background-color: #f1f1f1;
+}
+.wrap .select .select-info h3 {
+  padding-left: 10px;
+  float: left;
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 35px;
+}
+.wrap .select .select-info h3 em {
+  font-style: normal;
+  color: #666;
+}
+.wrap .select .select-line {
+  line-height: 35px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+.wrap .select .select-line dt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-left: 10px;
+  width: 60px;
+}
+.wrap .select .select-line .values {
+  padding: 0 140px 0 70px;
+  width: auto;
+  height: 35px;
+}
+.wrap .select .select-line .values ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.wrap .select .select-line .values ul li {
+  float: left;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.more {
+  height: auto;
+  margin: 0 auto;
+}
+.more .more-over {
+  border-top: 4px solid #f1f1f1;
+  text-align: center;
+}
+.more .more-over .more-btn {
+  display: inline-block;
+  padding: 2px 15px 5px;
+  background: #f1f1f1;
+  line-height: 20px;
+  font-size: 12px;
+}
+.more .more-over .more-btn i {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  background: url(../images/list.png) no-repeat;
+  background-position: 3px -136px;
+  margin-top: -3px;
+}
+
+.main {
+  height: auto;
+  margin: 0 auto;
+}
+.main .main-top {
+  margin: 10px 0;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-right: 0;
+  border-left: 0;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+.main .main-top .top-sort {
+  width: 250px;
+}
+.main .main-top .top-sort a {
+  padding: 3px 8px;
+  float: left;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-right: -1px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.main .main-top .top-sort a.current {
+  color: #fff;
+  background-color: #e4393c;
+  border-color: #e4393c;
+}
+.main .main-top .top-search {
+  width: 260px;
+  margin-left: 20px;
+}
+.main .main-top .top-search input {
+  padding: 3px;
+  width: 180px;
+  height: 17px;
+  line-height: 17px;
+  color: #999;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+.main .main-top .top-search a {
+  display: inline-block;
+  height: 14px;
+  line-height: 14px;
+  padding: 4px 13px 5px;
+  margin-left: -1px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  color: #333;
+}
+.main .main-list-box {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.main .main-list-box .main-list {
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.main .main-list-box .main-list li {
+  width: 234px;
+  height: 350px;
+  position: relative;
+  margin: 10px 0;
+  margin-left: 5px;
+  border: 1px solid #fff;
+  float: left;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.main .main-list-box .main-list li .list_info {
+  padding: 7px 7px 10px;
+  text-align: center;
+}
+.main .main-list-box .main-list li .list_info .list-img {
+  display: block;
+  text-align: center;
+  width: 220px;
+  height: 220px;
+}
+.main .main-list-box .main-list li .list_info .list-img img {
+  width: 100%;
+  height: 100%;
+}
+.main .main-list-box .main-list li .list-price {
+  position: relative;
+  margin: 5px 0;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+  overflow: hidden;
+  color: #e4393c;
+}
+.main .main-list-box .main-list li .list-price span {
+  float: left;
+}
+.main .main-list-box .main-list li .list-price span b {
+  font-size: 20px;
+  font-weight: 400;
+}
+.main .main-list-box .main-list li p {
+  line-height: 18px;
+  width: 100%;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  margin: 5px 0;
+}
+.main .main-list-box .main-list li .list-bottom {
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.main .main-list-box .main-list li .list-bottom a {
+  width: 116px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #ccc;
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  display: none;
+}
+.main .main-list-box .main-list li:hover {
+  border: 1px solid #ccc;
+  opacity: .9;
+}
+.main .main-list-box .main-list li:hover a {
+  display: block;
+}
+
+/*# sourceMappingURL=goodslist.css.map */

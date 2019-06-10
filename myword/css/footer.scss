@@ -1,0 +1,124 @@
+.footer {
+    height: 371px;
+    width: 100%;
+    border-top: 3px solid #e2e2e2;
+    margin-top: 50px;
+    .serverbox {
+        margin: 30px auto;
+        vertical-align: top;
+        overflow: hidden;
+        .server-list {
+            padding: 0 10px;
+            border-right: 1px solid #dbdbdb;
+            // vertical-align: top;
+            // overflow: hidden;
+            float: left;
+            li {
+                margin: 0 75px;
+                float: left;
+                h4 {
+                    font-weight: bolder;
+                    font-size: 16px;
+                    line-height: 32px;
+                    color: #000;
+                }
+                a {
+                    display: block;
+                    line-height: 30px;
+                    font-size: 12px;
+                    color: #000;
+                }
+            }
+            li.item-first {
+                margin-left: 0;
+            }
+        }
+        .custom-service {
+            margin-left: 100px;
+            float: left;
+            h4 {
+                font-weight: bolder;
+                font-size: 16px;
+                line-height: 32px;
+                color: #000;
+            }
+            .server-tel {
+                margin: 5px 0 15px;
+                display: block;
+                height: 40px;
+                width: 250px;
+                background: url(../images/service-icon.png) -10px -15px no-repeat;
+            }
+            .server-btn {
+                margin-bottom: 10px;
+                display: block;
+                height: 25px;
+                width: 135px;
+                border: 1px #bdbdbd solid;
+                border-radius: 5px;
+                i {
+                    display: block;
+                    float: left;
+                    height: 25px;
+                    width: 25px;
+                    font-size: 20px;
+                    padding-left: 12px;
+                }
+                span {
+                    height: 25px;
+                    line-height: 25px;
+                    margin-left: 15px;
+                    color: #000;
+                    font-size: 14px;
+                }
+            }
+            .server-btn:hover {
+                background-color: red;
+                color: #fff;
+            }
+            .weixin {
+                display: block;
+                height: 90px;
+                width: 90px;
+                background: url(../images/wx-code.jpg) no-repeat;
+            }
+        }
+    }
+    .company {
+        background: #000;
+        .company-info {
+            height: 60px;
+            line-height: 60px;
+            span {
+                color: #fff;
+                line-height: 60px;
+            }
+            span:nth-of-type(1) {
+                margin-right: 15px;
+            }
+            span:nth-of-type(2) {
+                margin-right: 30px;
+            }
+            span:nth-of-type(3) {
+                margin-right: 20px;
+            }
+            .police {
+                height: 33px;
+                width: 34px;
+                margin-top: 10px;
+                margin-right: 20px;
+                img {
+                    margin-top: 10px;
+                    vertical-align: top;
+                }
+            }
+        }
+        .company-info>div {
+            float: right;
+            a {
+                margin-right: 8px;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+.content {
+  margin: 50px auto;
+  overflow: hidden;
+}
+.content .content-list {
+  padding-left: 10px;
+  width: 1000px;
+  margin: 0 auto;
+}
+.content .content-list #creatBtn {
+  display: block;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.content .content-list .addr {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 237px;
+  height: 106px;
+  margin: 0 9px 9px 0;
+  color: #666;
+  float: left;
+  cursor: default;
+  z-index: 2;
+}
+.content .content-list .addr .inner {
+  position: relative;
+  padding: 11px 15px;
+  height: 84px;
+  z-index: 2;
+  background: url(../images/addr.png) no-repeat;
+}
+.content .content-list .addr .inner .addr-hd {
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 0 0 5px;
+  margin-bottom: 5px;
+  height: 18px;
+  line-height: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.content .content-list .addr .inner .addr-bd {
+  height: 55px;
+}
+.content .content-list .addr .inner .addr-bd h6 {
+  font-weight: normal;
+}
+.content .content-list .newaddr {
+  position: absolute;
+  background: #fff;
+  width: 600px;
+  height: 210px;
+  padding: 30px 0 20px;
+  border: 1px #ccc solid;
+  left: 50%;
+  margin-left: -300px;
+  top: 20%;
+  overflow: hidden;
+  z-index: 11;
+}
+.content .content-list .newaddr .newaddr-main {
+  height: 144px;
+  padding: 0 12px;
+}
+.content .content-list .newaddr .newaddr-main .list {
+  height: 26px;
+  padding: 5px 0;
+}
+.content .content-list .newaddr .newaddr-main .list .label {
+  width: 85px;
+  height: 26px;
+  margin-right: 5px;
+  float: left;
+  color: #666;
+  line-height: 26px;
+  display: block;
+  text-align: right;
+}
+.content .content-list .newaddr .newaddr-main .list .label em {
+  margin-right: 5px;
+  color: #f60;
+}
+.content .content-list .newaddr .newaddr-main .list .field {
+  height: 26px;
+  float: left;
+  line-height: 26px;
+}
+.content .content-list .newaddr .newaddr-main .list .field .textbox {
+  width: 200px;
+  height: 16px;
+  border: 1px solid #ccc;
+  padding: 4px 3px;
+  float: left;
+}
+.content .content-list .newaddr .from-btn {
+  height: 32px;
+  padding: 4px 0 30px 102px;
+}
+.content .content-list .newaddr .from-btn span {
+  text-align: center;
+  padding: 6px 20px;
+  float: left;
+  background-color: #d00;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.addr-bt {
+  padding-left: 10px;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: right;
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
+}
+.addr-bt a {
+  display: inline-block;
+  width: 130px;
+  height: 35px;
+  margin-right: 10px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 2px;
+}
+.addr-bt .continue {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.addr-bt .account {
+  background-color: #d00;
+  border: 1px solid #d00;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=address.css.map */

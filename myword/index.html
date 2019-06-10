@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>【安踏官方商城】-永不止步Keep Moving</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1173011_vuziol4sj7.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header w-full">
+    </div>
+
+    <!-- 首页大轮播 -->
+    <div class="banner w-full">
+        <ul class="bannerImg">
+            <li class="selected">
+                <img src="./images/pc1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./images/pc2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./images/pc3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./images/pc4.jpg" alt="">
+            </li>
+        </ul>
+
+        <ul class="bannerNav">
+            <li class="selected">漫威联名</li>
+            <li>放肆街头</li>
+            <li>新款气垫</li>
+            <li>KT4定制</li>
+        </ul>
+    </div>
+
+    <!-- 首页内容 -->
+    <div class="content w-full">
+        <ul class="w">
+            <li class="item item-1">
+                <a href="./layout/goodslist.html">
+                    <img src="./images/content1.jpg" alt="">
+                </a>
+                <div class="overbox">
+                    <a href="./layout/goodslist.html">立即选购</a>
+                </div>
+                <h3>
+                    <a href="">篮球明星战靴</a>
+                </h3>
+                <span>
+                    <a href="./layout/goodslist.html">汤普森四代</a>|
+                    <a href="./layout/goodslist.html">要疯系列</a>|
+                    <a href="./layout/goodslist.html">篮球服装</a>
+                </span>
+            </li>
+            <li class="item item-1">
+                <a href="./layout/goodslist.html">
+                    <img src="./images/content2.jpg" alt="">
+                </a>
+                <div class="overbox">
+                    <a href="./layout/goodslist.html">立即选购</a>
+                </div>
+                <h3>
+                    <a href="./layout/goodslist.html">跑步系列</a>
+                </h3>
+                <span>
+                    <a href="./layout/goodslist.html">闪能科技跑鞋</a>|
+                    <a href="./layout/goodslist.html">夏季新款</a>|
+                    <a href="./layout/goodslist.html">舒适气垫</a>|
+                    <a href="./layout/goodslist.html">跑步服装</a>
+                </span>
+            </li>
+            <li class="item item-2">
+                <a href="./layout/goodslist.html">
+                    <img src="./images/content3.jpg" alt="">
+                </a>
+                <div class="overbox">
+                    <a href="./layout/goodslist.html">立即选购</a>
+                </div>
+                <h3>
+                    <a href="./layout/goodslist.html">时尚潮福系列</a>
+                </h3>
+            </li>
+            <li class="item item-2">
+                <a href="./layout/goodslist.html">
+                    <img src="./images/content4.jpg" alt="">
+                </a>
+                <div class="overbox">
+                    <a href="./layout/goodslist.html">立即选购</a>
+                </div>
+                <h3>
+                    <a href="./layout/goodslist.html">2019年夏上新</a>
+                </h3>
+            </li>
+            <li class="item item-2">
+                <a href="./layout/goodslist.html">
+                    <img src="./images/content5.jpg" alt="">
+                </a>
+                <div class="overbox">
+                    <a href="./layout/goodslist.html">立即选购</a>
+                </div>
+                <h3>
+                    <a href="./layout/goodslist.html">复古呈新 安踏休闲系列</a>
+                </h3>
+            </li>
+        </ul>
+    </div>
+
+    <div class="produ w">
+        <div class="produ-title">
+            <h4>A-FLASHFOAM闪能科技</h4>
+            <h2>轻量化EVA高回弹复合材料，安踏自主研发，为跑者提供充足动力。</h2>
+        </div>
+        <div class="produ-ads">
+            <div class="slider-box">
+                <div class="slider-left">
+                    <img src="./images/content6.jpg" alt="">
+                </div>
+                <p class="slider-title">星环气垫跑鞋</p>
+                <p class="slider-info">新款SEEED全掌气垫星环跑鞋潮运动鞋</p>
+            </div>
+            <div class="slider-box">
+                <div class="slider-left">
+                    <img src="./images/content7.jpg" alt="">
+                </div>
+                <p class="slider-title">A-SPORTS 春上新</p>
+                <p class="slider-info">新升级运动面料、轻质有型，让你运动中激发潜能，提升运动表现。</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 底部 -->
+    <div class="footer">
+    </div>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/cookie.js"></script>
+<script>
+    // 头部
+    $(".header").load("layout/header.html", function() {
+        $.getScript("js/header.js", function() {
+            $(".login-btn").html('<a href="./layout/login.html" class="login-btn">登陆</a>');
+            $(".reg-btn").html('<a href="./layout/register.html" class="reg-btn">注册</a>');
+            $(".con-img").html('<img src="images/uni_logo.png">');
+        });
+    });
+    // 尾部
+    $(".footer").load("layout/footer.html", function() {
+        $(".police").html('<img src="./images/police.jpg" alt="">')
+    });
+
+
+    // 轮播图
+    var index = 0;
+    var timer = null;
+    var Len = $(".bannerNav li").length;
+    show(index);
+    $(".bannerNav li").on("click", function() {
+        index = $(this).index();
+
+        show(index);
+        start();
+    });
+    start();
+
+    function start() {
+        clearInterval(timer);
+        timer = setInterval(function() {
+            index++;
+            if (index == Len) {
+                index = 0;
+            }
+            show(index);
+        }, 3000)
+    };
+
+    function show(index) {
+        $(".bannerNav li").eq(index).addClass("selected").siblings().removeClass("selected");
+        $(".bannerImg li").eq(index).addClass("selected").siblings().removeClass("selected");
+
+    };
+</script>
+
+</html>

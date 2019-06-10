@@ -1,0 +1,306 @@
+.content {
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+.content .crumb {
+  width: 100%;
+  overflow: hidden;
+  margin: 25px 0 15px;
+}
+.content .crumb ul li {
+  float: left;
+  line-height: 21px;
+}
+.content .crumb ul li a {
+  color: #666;
+}
+.content .crumb ul li .crumb_arrow {
+  display: inline-block;
+  margin-left: 3px;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  background: url(../images/list.png) no-repeat;
+  background-position: 0 -104px;
+}
+.content .detail {
+  width: 100%;
+  height: 700px;
+}
+.content .detail .detail-left {
+  width: 740px;
+  float: left;
+  position: relative;
+}
+.content .detail .detail-left .detail-nav {
+  position: relative;
+  height: 600px;
+  width: 100px;
+  overflow: hidden;
+  float: left;
+}
+.content .detail .detail-left .detail-nav .navUp {
+  width: 27px;
+  height: 27px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin: 0 auto;
+  background: url(../images/dtl-icon.png) no-repeat 0 0;
+}
+.content .detail .detail-left .detail-nav .list-nav {
+  height: 524px;
+  width: 100px;
+  overflow: hidden;
+  margin: 15px auto;
+  position: relative;
+}
+.content .detail .detail-left .detail-nav .list-nav li {
+  height: 98px;
+  width: 98px;
+  overflow: hidden;
+  float: left;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 5px;
+}
+.content .detail .detail-left .detail-nav .list-nav li img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.content .detail .detail-left .detail-nav .navDown {
+  width: 27px;
+  height: 27px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin: 0 auto;
+  background: url(../images/dtl-icon.png) no-repeat 0 -30px;
+}
+.content .detail .detail-left .midImg {
+  position: relative;
+  float: left;
+  width: 600px;
+  height: 600px;
+  border: 3px solid #eee;
+  margin: 0 15px;
+}
+.content .detail .detail-left .midImg img {
+  width: 600px;
+  height: 600px;
+}
+.content .detail .detail-left .midImg .shadow {
+  width: 240px;
+  height: 240px;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.content .detail .detail-left .bigShadow {
+  width: 600px;
+  height: 600px;
+  float: left;
+  position: absolute;
+  left: 740px;
+  top: 0;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  border: 3px solid #eee;
+}
+.content .detail .detail-left .bigShadow #bigImg {
+  width: 1500px;
+  height: 1500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.content .detail .detail-right {
+  width: 450px;
+  float: left;
+}
+.content .detail .detail-right h1 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 0.2em;
+  height: 86px;
+}
+.content .detail .detail-right .sales {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.content .detail .detail-right .sales img {
+  width: 100%;
+}
+.content .detail .detail-right .sales .sales-price {
+  color: #999;
+  overflow: hidden;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.content .detail .detail-right .sales .sales-price b {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+}
+.content .detail .detail-right .sales .sales-price .current_price {
+  font-size: 28px;
+}
+.content .detail .detail-right .sales .sales-item {
+  color: #999;
+  overflow: hidden;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.content .detail .detail-right .sales .sales-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.content .detail .detail-right .sales .sales-img img {
+  width: 100%;
+}
+.content .detail .detail-right .onsales {
+  padding: 27px 20px;
+  background-image: url(../images/sale.png);
+  background-repeat: no-repeat;
+  background-size: auto 25px;
+  background-position: 5px 2px;
+  background-color: #eee;
+  margin-top: 20px;
+  color: #999;
+  overflow: hidden;
+}
+.content .detail .detail-right .onsales p {
+  width: 410px;
+  float: left;
+  color: #c40000;
+  line-height: 23px;
+  font-size: 14px;
+}
+.content .detail .detail-right .onsales p .onsales_by {
+  color: #c40000;
+}
+.content .detail .detail-right h5 {
+  line-height: 40px;
+  color: #666464;
+  font-size: 18px;
+  overflow: hidden;
+  margin: 40px 0 12px;
+  font-weight: normal;
+}
+.content .detail .detail-right h5 span {
+  font-weight: 300;
+}
+.content .detail .detail-right ul {
+  width: 450px;
+  height: 45px;
+  margin-bottom: 40px;
+}
+.content .detail .detail-right ul li {
+  display: inline-block;
+  padding: 1px;
+  margin: 0 4px 4px 0;
+  color: #232323;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  cursor: pointer;
+}
+.content .detail .detail-right ul li span {
+  width: 40px;
+  height: 33px;
+  font-size: 14px;
+  font-weight: 300;
+  display: inline-block;
+  text-align: center;
+  line-height: 33px;
+}
+.content .detail .detail-right ul li:hover {
+  border: 1px solid #232323;
+}
+.content .detail .detail-right ul li.selected {
+  border: 2px solid #c40000;
+}
+.content .detail .detail-right .num {
+  width: 134px;
+  height: 44px;
+  display: inline-block;
+  vertical-align: top;
+  font-weight: 300;
+  border: 1px solid #ccc;
+  color: #232323;
+  font-size: 13px;
+}
+.content .detail .detail-right .num button {
+  width: 40px;
+  height: 42px;
+  border: 0;
+  margin: 1px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.content .detail .detail-right .num input {
+  display: inline-block;
+  width: 40px;
+  height: 36px;
+  border: 0;
+  margin: 4px 0;
+  text-align: center;
+  line-height: 36px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.content .detail .detail-right button {
+  width: 134px;
+  height: 46px;
+  display: inline-block;
+  font-size: 16px;
+}
+.content .detail .detail-right #myshopcar {
+  background-color: #000;
+  color: #fff;
+}
+.content .detail .detail-right #buy {
+  background-color: #d00;
+  color: #fff;
+}
+.content .detail .detail-right .pro-intro {
+  margin-top: 30px;
+}
+
+.maybe-like {
+  overflow: hidden;
+  border-top: 1px solid #d9d9d9;
+  margin-top: 50px;
+}
+.maybe-like p {
+  padding: 65px 0 55px;
+  font-size: 38px;
+  text-align: center;
+}
+
+.cancel {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-top: 2px solid #ccc;
+}
+.cancel .cancel-h {
+  margin: 20px auto;
+  height: 30px;
+}
+.cancel .cancel-h a {
+  display: block;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 100;
+}
+
+/*# sourceMappingURL=detail.css.map */

@@ -1,0 +1,188 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.w-full {
+    width: 100%;
+}
+
+html,
+body {
+    font-size: 14px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: red;
+}
+
+.header {
+    height: 90px;
+    // overflow: hidden;
+    margin: 0 auto;
+    vertical-align: top;
+    .top {
+        line-height: 42px;
+        height: 42px;
+        margin: 5px auto;
+        overflow: hidden;
+        vertical-align: top;
+        clear: both;
+        .logo {
+            display: block;
+            float: left;
+            height: 42px;
+            width: 181px;
+            background: url(../images/logo.gif) no-repeat;
+            background-size: 100%;
+        }
+        .logo-box {
+            float: left;
+            padding: 0 10px;
+            a {
+                padding: 0 10px;
+                line-height: 40px;
+            }
+            span {
+                cursor: pointer;
+            }
+            span:hover {
+                color: #D6211A;
+            }
+        }
+        .quick-meau {
+            float: right;
+            li {
+                float: left;
+                padding-left: 10px;
+                // position: relative;
+                a {
+                    line-height: 40px;
+                    display: inline-block;
+                    padding-right: 10px
+                }
+                .icon {
+                    display: inline-block;
+                    width: 12px;
+                    height: 15px;
+                    margin-right: 5px;
+                    margin-bottom: -2px;
+                }
+                .icon-phone {
+                    background: url(../images/mui-global-iconfont.gif) no-repeat;
+                }
+                .icon-cart {
+                    background: url(../images/index-icon.png) -45px -96px no-repeat;
+                }
+            }
+        }
+    }
+    .nav {
+        background: #000;
+        height: 38px;
+        .main-nav {
+            height: 38px;
+            a {
+                color: #FFF;
+            }
+            .all-style {
+                float: left;
+                position: relative;
+                height: auto;
+                width: 210px;
+                .all-style-title {
+                    text-indent: 24px;
+                    background: #D6211A url(../images/public.gif) 0 -82px no-repeat;
+                    display: block;
+                    height: 38px;
+                    line-height: 38px;
+                    width: 210px;
+                    font-size: 16px;
+                }
+                .all-style-tab {
+                    z-index: 199;
+                    position: absolute;
+                    left: 0;
+                    top: 38px;
+                    background: url(../images/style-tab-bg.png) no-repeat;
+                }
+                .all-style-tab>li {
+                    z-index: 199;
+                    position: relative;
+                    padding: 7px 15px 8px;
+                    width: 180px;
+                    line-height: 22px;
+                    h3 {
+                        line-height: 18px;
+                        font-size: 16px;
+                        height: 21px;
+                    }
+                }
+            }
+            .line-nav {
+                float: left;
+                .item {
+                    height: 38px;
+                    width: 76px;
+                    float: left;
+                }
+                .item>a {
+                    background: #231f20 url(../images/navBg.gif) no-repeat right 15px;
+                    font-size: 14px;
+                    display: block;
+                    line-height: 38px;
+                    width: 62px;
+                    padding: 0 7px;
+                    text-align: center;
+                }
+                .item>a.con-img {
+                    height: 38px;
+                    width: 120px;
+                    background: #231f20;
+                    img {
+                        height: 30px;
+                        margin-top: 4px;
+                    }
+                }
+            }
+            .nav-search {
+                float: right;
+                position: relative;
+                input {
+                    outline: none;
+                    padding: 0 10px;
+                    height: 26px;
+                    border: 0;
+                    width: 180px;
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    margin-left: 7px;
+                }
+                .nav-search-btn {
+                    position: absolute;
+                    display: block;
+                    height: 23px;
+                    width: 30px;
+                    background: #fff url(../images/index-icon.png) -42px -164px no-repeat;
+                    border: none;
+                    cursor: pointer;
+                    right: 5px;
+                    top: 7px;
+                }
+            }
+        }
+    }
+}

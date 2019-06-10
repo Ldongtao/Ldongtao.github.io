@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page {
+    width: 500px;
+    height: 40px;
+    margin: 30px auto;
+}
+
+.page span {
+    float: left;
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 5px;
+}
+
+.page span.disabled {
+    background-color: #cdcdcd;
+}
+
+.page span.default {
+    background-color: black;
+}
+
+.page ul {
+    float: left;
+    height: 40px;
+}
+
+.page ul li {
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 5px;
+}
+
+.page ul li.selected {
+    background-color: deepskyblue;
+}

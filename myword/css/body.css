@@ -1,0 +1,180 @@
+.banner {
+  height: 550px;
+  position: relative;
+  top: -1px;
+  overflow: hidden;
+}
+.banner .bannerImg {
+  width: 1920px;
+  height: 500px;
+}
+.banner .bannerImg li {
+  width: 1920px;
+  height: 500px;
+  display: none;
+}
+.banner .bannerImg li img {
+  width: 1920px;
+  height: 500px;
+}
+.banner .bannerImg li.selected {
+  display: block;
+}
+.banner .bannerNav {
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  width: 564px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.banner .bannerNav li {
+  width: 120px;
+  height: 30px;
+  float: left;
+  padding: 0 10px;
+  line-height: 30px;
+  color: #fff;
+  background: #000;
+  opacity: .7;
+  border-right: 1px #969171 solid;
+  margin: 0;
+}
+.banner .bannerNav li.selected {
+  background-color: #d00;
+}
+
+.content {
+  height: 880px;
+  background: #f3f3f3;
+  padding: 30px 0;
+}
+.content ul {
+  height: 880px;
+}
+.content ul .item {
+  float: left;
+  position: relative;
+}
+.content ul .item .overbox {
+  display: none;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content ul .item .overbox a {
+  width: 110px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  display: inline-block;
+  font-weight: 700;
+}
+.content ul .item .overbox a:hover {
+  background-color: #fff;
+  color: #000;
+}
+.content ul .item h3 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.content ul .item h3 a:hover {
+  color: #000;
+}
+.content ul .item span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+.content ul .item span a {
+  font-size: 14px;
+  margin: 0 5px;
+}
+.content ul .item:hover .overbox {
+  display: block;
+}
+.content ul .item-1 {
+  height: 480px;
+  width: 580px;
+  margin-right: 15px;
+  margin-bottom: 40px;
+}
+.content ul .item-1 .overbox {
+  height: 400px;
+}
+.content ul .item-1 > a {
+  display: block;
+  height: 400px;
+  width: 580px;
+}
+.content ul .item-2 {
+  height: 370px;
+  width: 385px;
+  margin-right: 11px;
+}
+.content ul .item-2 .overbox {
+  height: 311px;
+}
+
+.produ {
+  background: #fff;
+}
+.produ .produ-title {
+  text-align: center;
+  height: 100px;
+  padding: 40px 0 30px;
+}
+.produ .produ-title h4 {
+  font-size: 26px;
+  line-height: 35px;
+  margin-bottom: 10px;
+}
+.produ .produ-title h2 {
+  font-size: 32px;
+  font-weight: bolder;
+  line-height: 50px;
+}
+.produ .produ-ads {
+  margin-bottom: 40px;
+  height: 558px;
+}
+.produ .produ-ads .slider-box {
+  float: left;
+  margin-right: 15px;
+}
+.produ .produ-ads .slider-box .slider-left {
+  width: 580px;
+  height: 406px;
+  overflow: hidden;
+}
+.produ .produ-ads .slider-box .slider-left img {
+  width: 100%;
+  height: 100%;
+}
+.produ .produ-ads .slider-box p {
+  text-align: center;
+  font-size: 14px;
+  line-height: 30px;
+  margin: 4px 0;
+}
+.produ .produ-ads .slider-box .slider-title {
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=body.css.map */

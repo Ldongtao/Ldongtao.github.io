@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1173011_vuziol4sj7.css">
+</head>
+
+<body>
+    <div class="header"></div>
+
+    <div class="content">
+        <div class="content-main">
+            <div class="register-box">
+                <div class="register">
+                    <div class="register-logo">
+                        <img src="../images/logo.png" alt="">
+                    </div>
+                    <ul>
+                        <li>
+                            <p>姓名</p>
+                            <input type="text" id="username">
+                            <span id="usernameTip"></span>
+                        </li>
+                        <li>
+                            <p>电子邮箱</p>
+                            <input type="text" id="useremail">
+                            <span id="useremailTip"></span>
+                        </li>
+                        <li>
+                            <p>密码</p>
+                            <input type="password" id="userpwd">
+                            <span id="userpwdTip"></span>
+                        </li>
+                        <li>
+                            <p>验证密码</p>
+                            <input type="password" id="repwd">
+                            <span id="repwdTip"></span>
+                        </li>
+                    </ul>
+                    <input type="checkbox" class="checkOne"><span>显示密码</span><br>
+                    <input type="checkbox" class="checkOne" checked>
+                    <p>我承诺点击(提交)按钮即表示我已阅读,理解并接受隐私政策,使用条款及退货政策的详细内容。</p>
+                    <button id="btn">注册账户</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer"></div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+    // 头部
+    $(".header").load("./header.html", function() {
+        $.getScript("../js/header.js");
+    });
+    // 尾部
+    $(".footer").load("./footer.html");
+
+    function userValidator() {
+        // 定义正则表达式
+        var regExp = /^[a-zA-Z0-9]{6,12}$/;
+        var $myval = $("#username").val();
+        // a. 不能为空
+        if ($myval == "" || $myval == null) {
+            $("#usernameTip").text("用户名不能为空.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        }
+        // b. 英文+数字,长度6-12
+        else if (!regExp.test($myval)) {
+            $("#usernameTip").text("用户名输入错误.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        }
+        // 输入正确
+        else {
+            $("#usernameTip").text("用户名输入正确.").css({
+                "color": "green",
+                "font-weight": "bold"
+
+            });
+            return true;
+        }
+    }
+
+    function pwdValidator() {
+        // 定义正则表达式
+        var regExp = /^[a-zA-Z0-9]{6,8}$/;
+        var $myval = $("#userpwd").val();
+        // a. 不能为空
+        if ($myval == "" || $myval == null) {
+            $("#userpwdTip").text("密码不能为空.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        } else if (!regExp.test($myval)) {
+            $("#userpwdTip").text("密码输入错误.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        } else {
+            $("#userpwdTip").text("密码输入正确.").css({
+                "color": "green",
+                "font-weight": "bold"
+            });
+            return true;
+        }
+    }
+
+    function repwdValidator() {
+        // 定义正则表达式
+        var regExp = /^[a-zA-Z0-9]{6,8}$/;
+        var $myval = $("#repwd").val();
+        var $pwd = $("#userpwd").val();
+        // a. 不能为空
+        if ($myval == "" || $myval == null) {
+            $("#repwdTip").text("密码不能为空.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        } else if (!regExp.test($myval)) {
+            $("#repwdTip").text("密码输入错误.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        }
+        // 两次密码输入一致
+        else if ($myval != $pwd) {
+            $("#repwdTip").text("两次密码输入不一致.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        } else {
+            $("#repwdTip").text("密码输入正确.").css({
+                "color": "green",
+                "font-weight": "bold"
+            });
+            return true;
+        }
+    }
+
+    function emailValidator() {
+        // 定义正则表达式
+        var regExp = /^[1-9a-z][0-9a-z]{4,}@[0-9a-z]{2,10}\.(com|cn)$/;
+        var $myval = $("#useremail").val();
+        // a. 不能为空
+        if ($myval == "" || $myval == null) {
+            $("#useremailTip").text("email不能为空.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        } else if (!regExp.test($myval)) {
+            $("#useremailTip").text("email输入错误.").css({
+                "color": "red",
+                "font-weight": "bold"
+            });
+            return false;
+        } else {
+            $("#useremailTip").text("email输入正确.").css({
+                "color": "green",
+                "font-weight": "bold"
+            });
+            return true;
+        }
+    }
+
+    // 1. 用户名验证
+    $("#username").focus(function() {
+        // 给出输入提示内容
+        $("#usernameTip").text("请输入英文或数字,长度在6至12之间.").css({
+            "color": "black",
+            "font-weight": "normal"
+        });
+    }).blur(userValidator);
+    // 2. 密码验证
+    $("#userpwd").focus(function() {
+        $("#userpwdTip").text("请输入英文或数字,长度在6至8之间.").css({
+            "color": "black",
+            "font-weight": "normal"
+        });
+    }).blur(pwdValidator);
+    // 3. 确认密码验证
+    $("#repwd").focus(function() {
+        $("#repwdTip").text("请输入英文,长度在6至8之间.").css({
+            "color": "black",
+            "font-weight": "normal"
+        });
+    }).blur(repwdValidator);
+    // 4. email验证
+    $("#useremail").focus(function() {
+        $("#useremailTip").text("请输入常用的email.").css({
+            "color": "black",
+            "font-weight": "normal"
+        });
+    }).blur(emailValidator);
+    /*
+     * 5. 提交表单前,验证所有元素验证通过
+     *  * 为<form>表单元素绑定onsubmit事件
+     *  * 事件对象时,return value(Boolean值)
+     *    * 是否阻止页面元素的默认行为
+     *      * false,表示阻止元素的默认行为
+     *  * 定义formValidator()必须具有返回值(Boolean)
+     */
+    $("#btn").click(function() {
+        // function formValidator() {
+        // 判断表单内所有元素验证全部通过
+        if (userValidator() && pwdValidator() && repwdValidator() && emailValidator()) {
+            // alert("表单验证成功!");
+            var username = $("#username").val();
+            // alert(username);
+            var useremail = $("#useremail").val();
+            var userpwd = $("#userpwd").val();
+
+            $.ajax({
+                type: "get",
+                url: "../php/register.php",
+                data: {
+                    username,
+                    useremail,
+                    userpwd
+                },
+                dataType: "json",
+                success: function(obj) {
+                    if (obj["code"] == 1) {
+                        // alert(obj["msg"]);
+                        confirm("注册成功");
+                        window.location.href = "login.html";
+                    } else {
+                        alert(obj["msg"]);
+                    }
+                }
+            });
+
+            return true;
+        } else {
+            alert("注册信息错误!");
+            return false;
+        }
+
+    });
+</script>
+
+</html>

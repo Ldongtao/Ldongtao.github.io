@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/shoppingcar.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1173011_vuziol4sj7.css">
+</head>
+
+<body>
+    <div class="header">
+    </div>
+
+    <div class="box">
+        <table>
+            <thead>
+                <tr id="thead">
+                    <th>
+                        <input type="checkbox" class="check-all">&nbsp;全选
+                    </th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td class="checkbox"><input type="checkbox" class="check-one"></td>
+                    <td class="goods"><img src="image/1.jpg"><span>策藏秀永不为奴，我爱策藏秀一辈子</span></td>
+                    <td class="price">280.00</td>
+                    <td class="count"><span class="reduce"></span>
+                        <input type="text" class="count-input" value="1"><span class="add">+</span></td>
+                    <td class="subtotal">280.00</td>
+                    <td class="operation"><span class="delete">删除</span></td>
+                </tr> -->
+
+            </tbody>
+        </table>
+        <div class="foot">
+            <label class="fl select-all"><input type="checkbox" class="check-all">&nbsp;全选</label>
+            <a class="fl " id="deleteAll">删除</a>
+            <div class="fr closing" onclick="getTotal();">结算</div>
+            <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+            <div class="fr selected">已选商品<span id="selectedTotal">0</span>件</div>
+        </div>
+    </div>
+
+    <div class="cancel w-full">
+        <div class="cancel-h ">
+            <a href="./goodslist.html">继续购物</a>
+        </div>
+    </div>
+
+
+    <div class="footer">
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+<script>
+    $(".header").load("./header.html", function() {
+        $.getScript("../js/header.js");
+    });
+    $(".footer").load("./footer.html");
+
+    var userid = getCookie("loginId");
+
+    $.ajax({
+        type: "get",
+        url: `../php/myshopcar.php?userid=${userid}`,
+        dataType: "json",
+        success: function(list) {
+            var html = "";
+            list.forEach(function(item) {
+                var {
+                    id,
+                    goodsid,
+                    goodsname,
+                    goodsprice,
+                    goodsimg,
+                    goodsnum,
+                } = item;
+                html += `
+                <tr data-id="${id}">
+                    <td class="checkbox"><input type="checkbox" class="check-one" data-id=${id}></td>
+                    <td class="goods"><img src="${goodsimg}"><span>${goodsname}</span></td>
+                    <td class="price">${(goodsprice*1).toFixed(2)}</td>
+                    <td class="count"><span class="reduce">${goodsnum>1?"-":""}</span>
+                        <input type="text" class="count-input" value="${goodsnum}">
+                        <span class="add">+</span></td>
+                    <td class="subtotal">${(goodsprice*goodsnum).toFixed(2)}</td>
+                    <td class="operation"><span class="delete">删除</span></td>
+                </tr>
+                `;
+            });
+
+            $("tbody").html(html);
+
+
+            $(".add").click(function() {
+                var countInput = $(this).prev();
+                countInput.val(countInput.val() * 1 + 1);
+
+                var num = $(this).prev().val();
+                // alert(num);
+                var id = $(this).parent().parent().attr("data-id");
+                // alert(id);
+                $.ajax({
+                    type: "get",
+                    url: "../php/changenum.php",
+                    data: {
+                        num: num,
+                        id: id,
+                    },
+                    dataType: "json",
+                    success: function(list) {
+                        // alert(666);
+                        cartNum();
+                    }
+                })
+
+                countInput.prev().html("-");
+                var price = $(this).parent().prev().html();
+                var total = price * countInput.val();
+                $(this).parent().next().html(total.toFixed(2));
+
+                getTotalAndPrice();
+            })
+
+            $(".reduce").click(function() {
+                var countInput = $(this).next();
+                var count = countInput.val();
+                if (count == 1) {
+                    return false;
+                }
+                countInput.val(count - 1);
+
+                var num = $(this).next().val();
+                var id = $(this).parent().parent().attr("data-id");
+                // alert(id);
+                $.ajax({
+                    type: "get",
+                    url: "../php/changenum.php",
+                    data: {
+                        num: num,
+                        id: id,
+                    },
+                    dataType: "json",
+                    success: function(list) {
+                        // alert(666);
+                        cartNum();
+                    }
+                })
+
+
+                if (countInput.val() == 1) {
+                    $(this).html("");
+                }
+
+
+
+                var price = $(this).parent().prev().html();
+                var total = price * countInput.val();
+                $(this).parent().next().html(total.toFixed(2));
+
+                getTotalAndPrice();
+
+            })
+
+            //全选和反选
+            var count = 0;
+            var maxCount = $(".check-one").length;
+            $(".check-all").click(function() {
+                var flag = $(this).prop("checked");
+                $(".check-one").prop("checked", flag);
+                count = flag ? maxCount : 0;
+
+                getTotalAndPrice();
+
+            });
+            $(".check-one").click(function() {
+                if ($(this).prop("checked")) {
+                    count++;
+                } else {
+                    count--;
+                }
+
+                if (count == maxCount) {
+                    $(".check-all").prop("checked", true);
+                } else {
+                    $(".check-all").prop("checked", false);
+                }
+
+
+
+                getTotalAndPrice();
+            })
+
+            $(".delete").click(function() {
+
+                var id = $(this).parent().parent().attr("data-id");
+                // alert(id);
+                $.ajax({
+                    type: "get",
+                    url: "../php/delgoodsbyid.php",
+                    data: {
+                        id: id,
+                    },
+                    dataType: "json",
+                    success: function(list) {
+                        // alert(666);
+                        cartNum();
+                    }
+                })
+
+                count = $(this).parent().parent().find(".check-one").prop("checked") ? count - 1 : count;
+                $(this).parent().parent().remove();
+                maxCount = $(".check-one").length;
+
+                if (count == maxCount) {
+                    $(".check-all").prop("checked", true);
+                } else {
+                    $(".check-all").prop("checked", false);
+                }
+
+
+                getTotalAndPrice();
+
+            })
+
+
+            // 批量删除
+            $("#deleteAll").click(function() {
+                var checkOneList = $(".check-one");
+                var idList = [];
+
+                $(".check-one:checked").parent().parent().remove();
+                for (var i = 0; i < checkOneList.length; i++) {
+                    // 判断checkOne是否被选中
+                    if (checkOneList[i].checked) {
+                        // checkOne被选中之后,找到选中的商品记录的id
+                        var id = checkOneList[i].getAttribute("data-id");
+                        // 将找到的商品记录的id存入空数组之中
+                        idList.push(id);
+                        // alert(id);
+                    }
+                }
+                var ids = idList.join(",");
+                $.ajax({
+                    type: "get",
+                    url: "../php/delgoods.php",
+                    data: {
+                        id: ids,
+                    },
+                    dataType: "json",
+                    success: function(obj) {
+                        if (obj['code'] == 1) {
+                            cartNum();
+                            getTotalAndPrice();
+                            count = 0;
+                            maxCount = $(".check-one").length;
+
+                        } else {
+                            alert("删除失败,请选中要删除的商品");
+                        }
+                    }
+                })
+            })
+
+            // 批量删除  事件委托
+            // $(document).delegate("#deleteAll", "click", function() {
+            //     var checkOneList = $(".check-one");
+            //     var idList = [];
+            //     for (var i = 0; i < checkOneList.length; i++) {
+            //         // 判断checkOne是否被选中
+            //         if (checkOneList[i].checked) {
+            //             // checkOne被选中之后,找到选中的商品记录的id
+            //             var id = checkOneList[i].getAttribute("data-id");
+            //             // 将找到的商品记录的id存入空数组之中
+            //             idList.push(id);
+            //             alert(id);
+            //         }
+            //     }
+            //     // 将其用','分隔
+            //     var ids = idList.join(",");
+            //     $.ajax({
+            //         type: "get",
+            //         url: "../php/delgoods.php",
+            //         data: {
+            //             id: ids,
+            //         },
+            //         dataType: "json",
+            //         success: function(obj) {
+            //             if (obj['code'] == 1) {
+            //                 // getTotalAndPrice();
+            //                 alert(obj['msg']);
+            //                 getTotal();
+
+            //             } else {
+            //                 alert("删除失败,请选中要删除的商品");
+            //             }
+            //         }
+
+            //     })
+            // })
+
+        }
+    })
+
+    function getTotalAndPrice() {
+
+        var num = 0;
+        var price = 0;
+        $(".check-one").each(function(index, item) {
+            if ($(item).prop("checked")) {
+                num += $(item).parent().parent().find(".count-input").val() * 1;
+                price += $(item).parent().parent().find(".subtotal").html() * 1;
+            }
+        })
+        $("#priceTotal").html(price.toFixed(2));
+        $("#selectedTotal").html(num);
+    }
+
+    function getTotal() {
+        // var count = $(".check-one").prop("checked").length;
+        // alert(count);
+        window.location.href = "./address.html";
+
+    }
+</script>
+
+</html>

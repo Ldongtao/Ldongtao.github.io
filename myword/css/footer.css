@@ -1,0 +1,124 @@
+.footer {
+  height: 371px;
+  width: 100%;
+  border-top: 3px solid #e2e2e2;
+  margin-top: 50px;
+}
+.footer .serverbox {
+  margin: 30px auto;
+  vertical-align: top;
+  overflow: hidden;
+}
+.footer .serverbox .server-list {
+  padding: 0 10px;
+  border-right: 1px solid #dbdbdb;
+  float: left;
+}
+.footer .serverbox .server-list li {
+  margin: 0 75px;
+  float: left;
+}
+.footer .serverbox .server-list li h4 {
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 32px;
+  color: #000;
+}
+.footer .serverbox .server-list li a {
+  display: block;
+  line-height: 30px;
+  font-size: 12px;
+  color: #000;
+}
+.footer .serverbox .server-list li.item-first {
+  margin-left: 0;
+}
+.footer .serverbox .custom-service {
+  margin-left: 100px;
+  float: left;
+}
+.footer .serverbox .custom-service h4 {
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 32px;
+  color: #000;
+}
+.footer .serverbox .custom-service .server-tel {
+  margin: 5px 0 15px;
+  display: block;
+  height: 40px;
+  width: 250px;
+  background: url(../images/service-icon.png) -10px -15px no-repeat;
+}
+.footer .serverbox .custom-service .server-btn {
+  margin-bottom: 10px;
+  display: block;
+  height: 25px;
+  width: 135px;
+  border: 1px #bdbdbd solid;
+  border-radius: 5px;
+}
+.footer .serverbox .custom-service .server-btn i {
+  display: block;
+  float: left;
+  height: 25px;
+  width: 25px;
+  font-size: 20px;
+  padding-left: 12px;
+}
+.footer .serverbox .custom-service .server-btn span {
+  height: 25px;
+  line-height: 25px;
+  margin-left: 15px;
+  color: #000;
+  font-size: 14px;
+}
+.footer .serverbox .custom-service .server-btn:hover {
+  background-color: red;
+  color: #fff;
+}
+.footer .serverbox .custom-service .weixin {
+  display: block;
+  height: 90px;
+  width: 90px;
+  background: url(../images/wx-code.jpg) no-repeat;
+}
+.footer .company {
+  background: #000;
+}
+.footer .company .company-info {
+  height: 60px;
+  line-height: 60px;
+}
+.footer .company .company-info span {
+  color: #fff;
+  line-height: 60px;
+}
+.footer .company .company-info span:nth-of-type(1) {
+  margin-right: 15px;
+}
+.footer .company .company-info span:nth-of-type(2) {
+  margin-right: 30px;
+}
+.footer .company .company-info span:nth-of-type(3) {
+  margin-right: 20px;
+}
+.footer .company .company-info .police {
+  height: 33px;
+  width: 34px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.footer .company .company-info .police img {
+  margin-top: 10px;
+  vertical-align: top;
+}
+.footer .company .company-info > div {
+  float: right;
+}
+.footer .company .company-info > div a {
+  margin-right: 8px;
+  color: #fff;
+}
+
+/*# sourceMappingURL=footer.css.map */

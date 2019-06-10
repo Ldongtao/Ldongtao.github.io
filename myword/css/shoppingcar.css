@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html,
+body {
+    font-size: 14px;
+    color: #666;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.box {
+    width: 940px;
+    margin: 100px auto;
+}
+
+.box table {
+    width: 100%;
+    text-align: center;
+}
+
+.box table th,
+.box table td {
+    border: 1px solid #ccc;
+}
+
+.box tbody tr:hover {
+    background: rgb(243, 238, 238);
+}
+
+.box table th {
+    height: 30px;
+    background-color: #aaa;
+    border-top: 3px solid #000;
+}
+
+.box table td {
+    padding: 10px;
+}
+
+.check-all {
+    vertical-align: middle;
+}
+
+.checkbox {
+    width: 60px;
+}
+
+.goods {
+    width: 300px;
+}
+
+.goods img {
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+.goods span {
+    width: 180px;
+    margin-top: 20px;
+    text-align: left;
+    float: left;
+}
+
+.price {
+    width: 130px;
+}
+
+.count {
+    width: 90px;
+}
+
+.count .add,
+.count input,
+.count .reduce {
+    float: left;
+    margin-right: -1px;
+    z-index: 0;
+}
+
+.count .add,
+.count .reduce {
+    width: 17px;
+    height: 23px;
+    border: 1px solid #e5e5e5;
+    background: #f0f0f0;
+    text-align: center;
+    line-height: 23px;
+    color: #444;
+}
+
+.count .add:hover,
+.count .reduce:hover {
+    color: #f50;
+    border-color: #f60;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.count input {
+    width: 50px;
+    height: 15px;
+    line-height: 15px;
+    border: 1px solid #aaa;
+    color: #343434;
+    text-align: center;
+    padding: 4px 0;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.subtotal {
+    width: 150px;
+}
+
+.operation span:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.foot {
+    color: #666;
+    height: 48px;
+    border: 1px solid #c8c8c8;
+    background-color: #eaeaea;
+    margin-top: 0;
+    border-top: 0;
+}
+
+.foot div,
+.foot a {
+    line-height: 48px;
+    height: 48px;
+}
+
+.foot .select-all {
+    width: 80px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.foot .closing {
+    border-left: 1px solid #c8c8c8;
+    width: 103px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.foot .closing:hover {
+    color: #333;
+}
+
+.foot .total {
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.foot #priceTotal,
+.foot #selectedTotal {
+    color: red;
+    font-weight: bold;
+}
+
+.foot .selected {
+    cursor: pointer;
+}
+
+.foot #deleteAll:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.cancel {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    margin: 20px auto;
+    border-top: 2px solid #ccc;
+}
+
+.cancel .cancel-h {
+    width: 940px;
+    margin: 20px auto;
+    height: 30px;
+}
+
+.cancel .cancel-h a {
+    font-size: 20px;
+    font-weight: 100;
+}
